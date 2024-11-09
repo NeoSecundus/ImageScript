@@ -1,0 +1,22 @@
+# Python Specific
+*.pyc
+*.egg-info
+dist/
+__pycache__/
+profiler
+
+# Database and logs
+*.log
+*.log.*
+logs/
+cov.xml
+*coverage*
+!.coveragerc
+htmlcov/
+
+# Caches
+.ruff_cache/
+
+# Misc
+out/
+notes.md
