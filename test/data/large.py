@@ -92,7 +92,7 @@ if __name__ == "__main__":
     code_blocks = []
 
     if len(argv) != 3 and len(argv) != 4:
-        print(f"\033[31mNot enough arguments! Expected 2 got {len(argv)-1}!\033[0m")
+        print(f"\033[31mNot enough arguments! Expected 2 got {len(argv)-1}! -> {argv}\033[0m")
         show_help()
         exit(-1)
 

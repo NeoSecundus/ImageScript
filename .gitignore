@@ -4,6 +4,7 @@
 dist/
 __pycache__/
 profiler
+.pytest_cache/
 
 # Database and logs
 *.log
