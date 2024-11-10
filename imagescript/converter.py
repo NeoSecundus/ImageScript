@@ -99,6 +99,15 @@ class Converter:
         overwrite: bool,
         password: str | None = None
     ):
+        """Hides data from a file in a cover image
+
+        Args:
+            file (Path): The file to get the data from
+            image (Path): The image to hide the data in
+            output (Path): The output file path
+            overwrite (bool): Whether to overwrite the output file if it exists
+            password (str | None, optional): A password needed for encryption if any. Defaults to None.
+        """
         img = Image.open(image)
         imgdata: list[tuple[int, int, int]] = list(img.getdata())
         with open(file, "rb") as f:
@@ -123,6 +132,14 @@ class Converter:
         overwrite: bool,
         password: str | None = None
     ):
+        """Extracts data from a image that contains data hidden by this tool
+
+        Args:
+            file (Path): The image to extract the data from
+            output (Path): The output file path
+            overwrite (bool): Whether to overwrite the output file if it exists
+            password (str | None, optional): A password needed for encryption if any. Defaults to None.
+        """
         img = Image.open(file)
         imgdata: list[tuple[int, int, int]] = list(img.getdata())
         data = unpack_steganography(imgdata)
