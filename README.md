@@ -70,5 +70,5 @@ imagescript pack -o output.webp my_data.txt cover_image.webp
 
 ## Change Log
 
-- Version 0.1.0 - 10.11.2024
+- Version 1.0.0 - 10.11.2024
   Initial release

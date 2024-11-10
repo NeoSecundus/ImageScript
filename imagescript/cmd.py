@@ -4,7 +4,7 @@ from pathlib import Path
 
 from imagescript.converter import Converter
 
-__version__ = "0.1.0"
+__version__ = "1.0.0"
 
 
 def _get_base_parser() -> ArgumentParser:
