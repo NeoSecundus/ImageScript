@@ -53,14 +53,14 @@ command:
 
 **A few examples:**
 
-Convert text to an image and also encrypt it:
+Convert text to an image and also encrypt it using a password prompt:
 ```bash
-imagescript to_image -o output.webp -P mysecret input.txt
+imagescript to_image -o output.webp -P input.txt
 ```
 
-Convert the previously converted image back to a script file:
+Convert the previously converted image back to a script file using a directly supplied password:
 ```bash
-imagescript to_text -o input.out.txt -P mysecret output.webp
+imagescript to_text -o input.out.txt --password mysecret output.webp
 ```
 
 Use steganography to hide a text file in an image:
@@ -70,5 +70,7 @@ imagescript pack -o output.webp my_data.txt cover_image.webp
 
 ## Change Log
 
+- Version 1.1.0 - 10.11.2024
+  Added more secure way to supply passwords
 - Version 1.0.0 - 10.11.2024
   Initial release

@@ -1,18 +1,26 @@
 import re
 from argparse import ArgumentParser
+from getpass import getpass
 from pathlib import Path
 
 from imagescript.converter import Converter
 
-__version__ = "1.0.0"
+__version__ = "1.1.0"
 
 
 def _get_base_parser() -> ArgumentParser:
     base_parser = ArgumentParser(add_help=False)
     base_parser.add_argument(
         "-P",
+        help="A flag that a password is to be used for AES encryption/decryption. "
+            "This flag will open a secure password prompt.",
+        action="store_true",
+        default=False,
+        dest="password_flag"
+    )
+    base_parser.add_argument(
         "--password",
-        help="A password to be used for AES encryption/decryption. "
+        help="Directly supply a password to be used for AES encryption/decryption. (UNSAFE) "
             "Encryption is automatically executed if a password is supplied."
     )
     base_parser.add_argument("target_file", help="The image or text file to operate on.", type=Path)
@@ -88,6 +96,9 @@ def main():
         args.output = args.target_file
     elif args.output.is_dir():
         args.output = args.output / args.target_file.name
+
+    if args.password_flag:
+        args.password = getpass("Enter a password: ")
 
     match args.command:
         case "to_image":
