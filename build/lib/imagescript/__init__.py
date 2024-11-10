@@ -1,6 +1,4 @@
-from .cmd import main as cmd
+from .cmd import __version__, main
+from .converter import Converter
 
-BASEDIR = __file__
-print(BASEDIR)
-
-__all__ = ["cmd"]
+__all__ = ["Converter", "main", "__version__"]
